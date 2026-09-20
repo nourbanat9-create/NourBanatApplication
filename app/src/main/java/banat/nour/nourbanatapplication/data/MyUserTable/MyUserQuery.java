@@ -1,27 +1,51 @@
 package banat.nour.nourbanatapplication.data.MyUserTable;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
-@Dao
-public interface MyUserQuery {
+
+/**
+ * واجهة تحوي عمليات\دوال\استعلامات على قاعدة البيانات
+ */
+@Dao // لتحديد ان الواجهة تحوي استعلامات على قاعدة بيانات
+public interface MyUserQuery
+{
+    // استخراج جميع المستعملين
     @Query("SELECT * FROM MyUser")
-    List<MyUser> getall();
+    List<MyUser> getAll();
 
-    @Query("SELECT * FROM MyUser WHERE  keyid IN (:usersId)")
+    // استخراج مستعمل حسب رقم المميز له id
+    @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
+    List<MyUser> loadAllByIds(int[] userIds);
 
-    List<MyUser> loadAllByIds (int [] usersId);
+    // هل المستعمل موجود حسب الايميل وكلمة السر
+    @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
+    MyUser checkEmailPassw(String myEmail, String myPassw);
 
-    @Query("SELECT * FROM MyUser WHERE  email = :myEmail and passw = :mypassw LIMIT 1 ")
+    // فحص هل الايميل موجود من قبل
+    @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
+    MyUser checkEmail(String myEmail);
 
-    MyUser checkEmail (String myEmail , String mypassw ) ;
-    MyUser checkEmail (String myEmail ) ;
+    @Insert
+        // إضافة مستعمل او مجموعة مستعملين
+    void insertAll(MyUser... users);
 
-    void insertAll (MyUser ... Users ) ;
-    void delete (MyUser user );
-    void delete ( int id );
-    void insert ( MyUser myUser);
+    @Delete
+        // حذف
+    void delete(MyUser user);
 
-    void update (MyUser ... values ) ;
+    // حذف حسب الرقم المميز id
+    @Query("Delete From MyUser WHERE keyid=:id ")
+    void delete(int id);
+
+    @Insert // إضافة مستعمل واحد
+    void insert(MyUser myUser);
+
+    @Update
+        // تعديل مستعمل او قائمة مستعملين
+    void update(MyUser...values);
 }
