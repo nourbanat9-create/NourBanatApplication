@@ -1,4 +1,4 @@
-package banat.nour.nourbanatapplication.data.mytasksTable;
+package banat.nour.nourbanatapplication.Model.mytasksTable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

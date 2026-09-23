@@ -1,4 +1,4 @@
-package banat.nour.nourbanatapplication.data.MySubjectTable;
+package banat.nour.nourbanatapplication.Model.MySubjectTable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

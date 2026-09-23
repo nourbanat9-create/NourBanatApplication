@@ -1,10 +1,8 @@
-package banat.nour.nourbanatapplication.data.mytasksTable;
+package banat.nour.nourbanatapplication.Model.mytasksTable;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
-import androidx.room.Entity;
 import androidx.room.Insert;
-import androidx.room.PrimaryKey;
 import androidx.room.Query;
 import androidx.room.Update;
 

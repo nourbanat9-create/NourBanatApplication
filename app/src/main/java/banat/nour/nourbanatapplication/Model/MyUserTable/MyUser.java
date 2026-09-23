@@ -1,4 +1,4 @@
-package banat.nour.nourbanatapplication.data.MyUserTable;
+package banat.nour.nourbanatapplication.Model.MyUserTable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

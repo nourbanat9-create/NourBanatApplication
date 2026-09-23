@@ -1,4 +1,4 @@
-package banat.nour.nourbanatapplication.data.MyUserTable;
+package banat.nour.nourbanatapplication.Model.MyUserTable;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

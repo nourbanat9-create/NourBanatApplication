@@ -1,4 +1,4 @@
-package banat.nour.nourbanatapplication.data;
+package banat.nour.nourbanatapplication.Model;
 
 import android.content.Context;
 
@@ -6,12 +6,12 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import banat.nour.nourbanatapplication.data.MySubjectTable.MySubject;
-import banat.nour.nourbanatapplication.data.MySubjectTable.MySubjectQuery;
-import banat.nour.nourbanatapplication.data.MyUserTable.MyUser;
-import banat.nour.nourbanatapplication.data.MyUserTable.MyUserQuery;
-import banat.nour.nourbanatapplication.data.mytasksTable.MyTask;
-import banat.nour.nourbanatapplication.data.mytasksTable.MyTaskQuery;
+import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubject;
+import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubjectQuery;
+import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
+import banat.nour.nourbanatapplication.Model.MyUserTable.MyUserQuery;
+import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
+import banat.nour.nourbanatapplication.Model.mytasksTable.MyTaskQuery;
 
 @Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
 /**
