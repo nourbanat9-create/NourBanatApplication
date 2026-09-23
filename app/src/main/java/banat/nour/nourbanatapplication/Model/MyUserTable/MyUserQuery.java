@@ -20,6 +20,8 @@ public interface MyUserQuery
 
     // استخراج مستعمل حسب رقم المميز له id
     @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
+
+
     List<MyUser> loadAllByIds(int[] userIds);
 
     // هل المستعمل موجود حسب الايميل وكلمة السر
