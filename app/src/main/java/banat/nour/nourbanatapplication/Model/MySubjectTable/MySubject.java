@@ -9,4 +9,6 @@ public class MySubject {
     public long key_id ;
     public String title ;
 
+    public void setTitle(String math) {
+    }
 }

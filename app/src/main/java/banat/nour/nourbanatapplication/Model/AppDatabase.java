@@ -13,12 +13,12 @@ import banat.nour.nourbanatapplication.Model.MyUserTable.MyUserQuery;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTaskQuery;
 
-@Database(entities = {MyUser.class, MySubject.class, MyTask.class , CarsTable.class }, version = 1)
 /**
  * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
  * وتوفر لنا كائن للتعامل مع قاعدة البيانات
  */
-    public abstract class AppDataBase extends RoomDatabase {
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class , CarsTable.class }, version = 1)
+public abstract class AppDataBase extends RoomDatabase {
     /**
      * كائن للتعامل مع قاعدة البيانات
      */
@@ -63,18 +63,6 @@ import banat.nour.nourbanatapplication.Model.mytasksTable.MyTaskQuery;
         return db;
     }
 
-    //بناء قاعدة بيانات وارجاع مؤشر عليها1
-    AppDataBase db=AppDataBase.getDB(getApplicationContext());
-    //2 مؤشر لكائن عمليات  لجدول
-    MySubjectQuery subjectQuery = db.getMySubjectQuery();
-    //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
-    MySubject s1=new MySubject();
-s1.setTitle("Math");
-    MySubject s2=new MySubject();
-    s2.title="Computers";
-//4 اضافة كائن للجدول
-subjectQuery.insert(s1);
-subjectQuery.insert(s2);
 
 
 
