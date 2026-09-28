@@ -12,17 +12,18 @@ import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
 import banat.nour.nourbanatapplication.Model.MyUserTable.MyUserQuery;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTaskQuery;
+import banat.nour.nourbanatapplication.Model.pkg_table.CarsTable;
 
 /**
  * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
  * وتوفر لنا كائن للتعامل مع قاعدة البيانات
  */
 @Database(entities = {MyUser.class, MySubject.class, MyTask.class , CarsTable.class }, version = 1)
-public abstract class AppDataBase extends RoomDatabase {
+public abstract class AppDatabase extends RoomDatabase {
     /**
      * كائن للتعامل مع قاعدة البيانات
      */
-    private static AppDataBase db;
+    private static AppDatabase db;
 
     /**
      * يعيد كائن لعمليات جدول المستعملين
@@ -51,7 +52,9 @@ public abstract class AppDataBase extends RoomDatabase {
      * @param context
      * @return
      */
-    public static AppDataBase getDB(Context context) {
+    public abstract CarsTable gettaskQuery();
+
+    public static AppDatabase getDB(Context context) {
         if (db == null) {
             db = Room.databaseBuilder(context,
                             AppDataBase.class,

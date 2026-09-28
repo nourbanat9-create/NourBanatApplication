@@ -10,7 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import banat.nour.nourbanatapplication.Model.AppDataBase;
+import banat.nour.nourbanatapplication.Model.AppDatabase;
+import banat.nour.nourbanatapplication.Model.AppDatabase;
 import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubject;
 import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubjectQuery;
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         //بناء قاعدة بيانات وارجاع مؤشر عليها1
-        AppDataBase db=AppDataBase.getDB(getApplicationContext());
+        AppDatabase db=AppDatabase.getDB(getApplicationContext());
         //2 مؤشر لكائن عمليات  لجدول
         MySubjectQuery subjectQuery = db.getMySubjectQuery();
         //3  بناء كائن من نوع الجدول وتحديد قيم الصفات

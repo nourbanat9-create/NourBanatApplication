@@ -11,4 +11,12 @@ public class MySubject {
 
     public void setTitle(String math) {
     }
+
+    public void setKey_id(long key_id) {
+        this.key_id = key_id;
+    }
+
+    public long getKey_id() {
+        return key_id;
+    }
 }
