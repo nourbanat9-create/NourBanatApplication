@@ -1,19 +1,17 @@
-package banat.nour.nourbanatapplication;
+package banat.nour.nourbanatapplication.ViewPkg;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import banat.nour.nourbanatapplication.Model.AppDatabase;
-import banat.nour.nourbanatapplication.Model.AppDatabase;
 import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubject;
 import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubjectQuery;
+import banat.nour.nourbanatapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
