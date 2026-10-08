@@ -56,14 +56,43 @@ public class TaskRepository {
         return taskQuery.getAllTaskOrederBy(UserId);
     }
     /**
-     * جلب مهمة معينة بناءً على معرفها الفريد (Task ID).
+     * إدراج مهمة أو عدة مهمات جديدة في قاعدة البيانات.
      *
-     * @param taskId معرف المهمة الفريد.
-     * @return كائن المهمة المطلوب.
+     * @param tasks المهام المراد إضافتها.
      */
-    public LiveData<MyTask> getTaskById(long taskId){
-        return taskQuery.getTasksBySubjId(taskId);
 
+    public void insert (MyTask... tasks){
+        taskQuery.updateTask(tasks);
     }
+    /**
+     * تحديث مهمة أو عدة مهمات في قاعدة البيانات.
+     *
+     * @param tasks المهام المراد تحديثها.
+     */
+
+    public void update (MyTask...tasks){
+        taskQuery.updateTask(tasks);
+    }
+    /**
+     * حذف مهمة أو عدة مهمات من قاعدة البيانات.
+     *
+     * @param tasks المهام المراد حذفها.
+     */
+    public void delete (MyTask...tasks){
+        taskQuery.deleteTask(tasks);
+    }
+    /**
+     * حذف مهمة محددة باستخدام معرفها الفريد (Task ID).
+     *
+     * @param taskId معرف المهمة المراد حذفها.
+     */
+
+    public void deleteTaskById  (long taskId){
+        taskQuery.deleteTask(taskId);
+    }
+
+
+
+
 
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewPkg.AddTaskActivity">
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="406dp"
+        android:layout_height="94dp"
+        android:text="Add New Task "
+        tools:layout_editor_absoluteX="7dp" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="412dp"
+        android:layout_height="96dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Task Description "
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+    <EditText
+        android:id="@+id/etDescrition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etPriority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnSaveTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save Task" />
+
+</LinearLayout>
