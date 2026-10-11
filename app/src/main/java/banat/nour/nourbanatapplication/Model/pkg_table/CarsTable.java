@@ -2,7 +2,7 @@ package banat.nour.nourbanatapplication.Model.pkg_table;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-@Entity (tableName = "cars_table")
+@Entity
 public class CarsTable {
     @PrimaryKey(autoGenerate = true)
     public long planteNumber ;

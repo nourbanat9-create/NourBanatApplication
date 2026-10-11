@@ -1,5 +1,6 @@
 package banat.nour.nourbanatapplication.Model.MyUserTable;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,21 +17,19 @@ public interface MyUserQuery
 {
     // استخراج جميع المستعملين
     @Query("SELECT * FROM MyUser")
-    List<MyUser> getAll();
+    LiveData<List<MyUser> >getAll();
 
     // استخراج مستعمل حسب رقم المميز له id
     @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
-
-
-    List<MyUser> loadAllByIds(int[] userIds);
+    LiveData<List<MyUser> >loadAllByIds(int[] userIds);
 
     // هل المستعمل موجود حسب الايميل وكلمة السر
     @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
-    MyUser checkEmailPassw(String myEmail, String myPassw);
+    LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
 
     // فحص هل الايميل موجود من قبل
     @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
-    MyUser checkEmail(String myEmail);
+    LiveData<List<MyUser>> checkEmail(String myEmail);
 
     @Insert
         // إضافة مستعمل او مجموعة مستعملين
@@ -38,7 +37,7 @@ public interface MyUserQuery
 
     @Delete
         // حذف
-    void delete(MyUser user);
+    void delete(MyUser... user);
 
     // حذف حسب الرقم المميز id
     @Query("Delete From MyUser WHERE keyid=:id ")
