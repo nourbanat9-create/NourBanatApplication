@@ -38,7 +38,7 @@ public interface MyTaskQuery {
      */
     @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted=:isCompleted_p " +
             "ORDER BY importance DESC")
-    List<MyTask> getAllTaskOrederBy(long userid_p, boolean isCompleted_p);
+    LiveData<List<MyTask>> getAllTaskOrederBy(long userid_p, boolean isCompleted_p);
 
     /**
      * ادخال مهمات

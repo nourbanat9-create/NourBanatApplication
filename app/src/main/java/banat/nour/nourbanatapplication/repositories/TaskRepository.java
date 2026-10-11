@@ -90,9 +90,14 @@ public class TaskRepository {
     public void deleteTaskById  (long taskId){
         taskQuery.deleteTask(taskId);
     }
+    public LiveData<List<MyTask>> getTasksBySubjId (long key_id){
+        return taskQuery.getTasksBySubjId(key_id);
+    }
+    public LiveData<List<MyTask>>getAllTaskOrederBy (long userid_p, boolean isCompleted_p){
+        return taskQuery.getAllTaskOrederBy(userid_p , isCompleted_p);
+    }
 
-
-
+    public void insertTask (MyTask... t)
 
 
 }

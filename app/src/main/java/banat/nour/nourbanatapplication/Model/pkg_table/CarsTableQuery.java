@@ -7,11 +7,9 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
-
 @Dao
-public interface tasksQuery {
-    @Query("SELECT * FROM cars_table ")
+public interface CarsTableQuery {
+    @Query("SELECT * FROM CarsTable ")
         LiveData <List<CarsTable>> getAll () ;
 
     @Insert
