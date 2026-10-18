@@ -40,7 +40,15 @@ public class UserRepository {
     public void delete (MyUser... Users){
         UserQuery.delete(Users);
     }
-
+    public void delete (int id ) {
+        UserQuery.delete(id);
+    }
+    public void insert (MyUser myUser){
+        UserQuery.insert(myUser);
+    }
+    public void update (MyUser ... values){
+        UserQuery.update(values);
+    }
 
 
 

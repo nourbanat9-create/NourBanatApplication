@@ -97,7 +97,9 @@ public class TaskRepository {
         return taskQuery.getAllTaskOrederBy(userid_p , isCompleted_p);
     }
 
-    public void insertTask (MyTask... t)
+    public void insertTask (MyTask... t){
+        taskQuery.insertTask(t);
+    }
 
 
 }
