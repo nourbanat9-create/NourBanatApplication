@@ -14,6 +14,7 @@
     android:layout_marginEnd="20dp"
     android:layout_marginRight="20dp"
     android:layout_marginBottom="20dp"
+    android:background="#FFFBFB"
     android:orientation="vertical"
     app:layout_marginBaseline="20dp"
     tools:context=".ViewPkg.RegisterActivity">
@@ -21,43 +22,52 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
-        android:text="User Registration" />
+        android:layout_height="76dp"
+        android:gravity="center"
+        android:text="User Registration"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etFullName"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="86dp"
+        android:backgroundTint="#9B9393"
+
         android:ems="10"
-        android:inputType="text"
-        android:text="Full Name" />
+        android:hint="Full Name"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="161dp"
+        android:layout_height="92dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:text="Email" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/edPassword"
         android:layout_width="match_parent"
-        android:layout_height="174dp"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberPassword"
-        android:text="Password" />
+        android:hint="password"
+        android:inputType="text"
+        android:text="password" />
 
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="88dp"
         android:ems="10"
+        android:hint="phone Number"
         android:inputType="phone" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="157dp"
+        android:layout_height="72dp"
         android:text="Register" />
+
 </LinearLayout>
