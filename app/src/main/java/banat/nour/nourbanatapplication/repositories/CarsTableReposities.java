@@ -20,6 +20,27 @@ public class CarsTableReposities {
         allcars = carstable.getAllCars();
 
     }
+    public void delete (CarsTable ... cars ){
+        carstable.delete(cars);
+    }
+    public void update (CarsTable...Mycar){
+        carstable.delete(Mycar);
+    }
+    public void delete (int id ){
+        carstable.delete(id);
 
+    }
+    public void insert(CarsTable MyCar){
+        carstable.insert(MyCar);
+    }
+    public void insertAll(CarsTable... cars){
+        carstable.insertAll(cars);
+    }
+    public LiveData<List<CarsTable>>checkPrice(String myBrand, String model1){
+        return checkPrice(myBrand, model1);
+    }
 
+    public LiveData<List<CarsTable>> loadAllByPlanteNum(int[] userIds) {
+        return loadAllByPlanteNum(userIds);
+    }
 }

@@ -19,7 +19,7 @@ public interface MyTaskQuery {
      * اعادة جميع معطيات جدول المهمات
      * @return قائمة من المهمات
      */
-    @Query("SELECT * FROM MyTask ORDER BY importance DESC")
+    @Query("SELECT * FROM MyTask")
    LiveData< List<MyTask>> getAllTasks();
 
     /**
@@ -36,8 +36,7 @@ public interface MyTaskQuery {
      * @param isCompleted_p هل تمت ام لا
      * @return قائمة مهمات
      */
-    @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted=:isCompleted_p " +
-            "ORDER BY importance DESC")
+    @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted=:isCompleted_p " )
     LiveData<List<MyTask>> getAllTaskOrederBy(long userid_p, boolean isCompleted_p);
 
     /**
@@ -60,7 +59,7 @@ public interface MyTaskQuery {
     @Delete
     void deleteTask(MyTask...tasks);
 
-    @Query("DELETE FROM MyTask WHERE keyId=:kid")
+    @Query("DELETE FROM MyTask WHERE taskId=:kid")
     void deleteTask(long kid);
 
     /**
@@ -68,7 +67,6 @@ public interface MyTaskQuery {
      * @param key_id رقم الموضوع
      * @return
      */
-    @Query("SELECT * FROM MyTask WHERE subjId=:key_id " +
-            "ORDER BY importance DESC")
+    @Query("SELECT * FROM MyTask WHERE subjId=:key_id ")
     LiveData<List<MyTask> >getTasksBySubjId(long key_id);
 }

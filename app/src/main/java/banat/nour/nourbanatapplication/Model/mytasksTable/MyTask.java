@@ -12,13 +12,13 @@ public class MyTask
 {
     @PrimaryKey(autoGenerate = true)
     /* رقم المهمة */
-    public long keyId;
+    public long taskId;
     /* درجة الاهمية 1-5 */
-    public int importance;
+    public int priorty;
     /* عنوان قصير */
-    public String shortTitle;
+    public String title;
     /* نص المهمة */
-    public String text;
+    public String description;
     /* زمن بناء المهمة */
     public long time;
     /* هل تمت المهمة */

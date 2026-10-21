@@ -1,6 +1,9 @@
 package banat.nour.nourbanatapplication.ViewPkg;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,11 @@ import androidx.core.view.WindowInsetsCompat;
 import banat.nour.nourbanatapplication.R;
 
 public class AddTaskActivity extends AppCompatActivity {
+    private TextView tvTaskId ;
+    private EditText etTitle ;
+    private EditText etDescriotion ;
+    private EditText etPriority ;
+    private Button btnSaveTask ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,4 +30,5 @@ public class AddTaskActivity extends AppCompatActivity {
             return insets;
         });
     }
+
 }

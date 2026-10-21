@@ -25,12 +25,10 @@ public interface CarsTableQuery {
     @Query("SELECT * FROM CarsTable WHERE planteNumber IN (:userIds)")
     LiveData<List<MyUser> >loadAllByPlanteNum(int[] userIds);
 
-   /** @Query("SELECT * FROM CarsTable WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
-    LiveData<List<MyUser>> checkEmailPassw(String myEmail, String myPassw);
+   @Query("SELECT * FROM CarsTable WHERE brand = :myBrand AND model1 = :model1 LIMIT 1")
+    LiveData<List<CarsTable>> checkPrice(String myBrand, String model1);
 
-    @Query("SELECT * FROM CarsTable WHERE planteNumber = :planteNum ")
-    LiveData<List<MyUser>> checkEmail(long plantNum);
-**/
+
     @Insert
         // إضافة مستعمل او مجموعة مستعملين
     void insertAll(CarsTable... cars);
@@ -48,6 +46,7 @@ public interface CarsTableQuery {
 
     @Update
     void update(CarsTable...Mycar);
+
 }
 
 

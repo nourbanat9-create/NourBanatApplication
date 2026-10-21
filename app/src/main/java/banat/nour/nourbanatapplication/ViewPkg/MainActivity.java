@@ -1,6 +1,9 @@
 package banat.nour.nourbanatapplication.ViewPkg;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,8 @@ import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubjectQuery;
 import banat.nour.nourbanatapplication.R;
 
 public class MainActivity extends AppCompatActivity {
+    private Button bntAddNewTask ;
+    private Button bntRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         //بناء قاعدة بيانات وارجاع مؤشر عليها1
-        AppDatabase db=AppDatabase.getDB(getApplicationContext());
+        AppDatabase db = AppDatabase.getDB(getApplicationContext());
         //2 مؤشر لكائن عمليات  لجدول
         MySubjectQuery subjectQuery = db.getMySubjectQuery();
         //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
-        MySubject s1=new MySubject();
+        MySubject s1 = new MySubject();
         s1.setTitle("Math");
-        MySubject s2=new MySubject();
-        s2.title="Computers";
+        MySubject s2 = new MySubject();
+        s2.title = "Computers";
 //4 اضافة كائن للجدول
         subjectQuery.insert(s1);
         subjectQuery.insert(s2);
@@ -38,7 +43,34 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        bntAddNewTask = findViewById(R.id.btnAddNewTask);
+        bntAddNewTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        bntRegister = findViewById(R.id.bntRegister);
+        bntRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
+
     }
 
 
-}
+
+    }
+
+
+
+
+

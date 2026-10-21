@@ -22,16 +22,16 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="76dp"
+        android:layout_height="149dp"
         android:gravity="center"
         android:text="User Registration"
         android:textSize="30dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etFullName"
+        android:id="@+id/fullName"
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="70dp"
         android:backgroundTint="#9B9393"
 
         android:ems="10"
@@ -39,27 +39,25 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/Email"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
+        android:layout_height="82dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:text="Email" />
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/edPassword"
+        android:id="@+id/Password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="79dp"
         android:ems="10"
         android:hint="password"
-        android:inputType="text"
-        android:text="password" />
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/etPhone"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="67dp"
         android:ems="10"
         android:hint="phone Number"
         android:inputType="phone" />
@@ -67,7 +65,7 @@
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="62dp"
         android:text="Register" />
 
 </LinearLayout>

@@ -10,40 +10,46 @@
     tools:context=".ViewPkg.AddTaskActivity">
 
     <TextView
-        android:id="@+id/TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/taskId"
+        android:layout_width="340dp"
+        android:layout_height="72dp"
         android:layout_margin="20dp"
-        android:text="Add New Task" />
+        android:gravity="center"
+        android:text="Add New Task"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="67dp"
         android:ems="10"
+        android:hint="Task Title "
         android:inputType="text"
-        android:text="Task Title" />
+         />
 
     <EditText
-        android:id="@+id/etDescription"
+        android:id="@+id/etDescriotion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name" />
+        android:hint="Task Description"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/etPriority"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:ems="10"
+        android:hint="Prioity (e.g 1,2,3)"
         android:inputType="number"
-        android:text="Priority (e.g 1,2,3)" />
+        />
 
     <Button
         android:id="@+id/btnSaveTask"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:text="Save Task" />
 
 </LinearLayout>
