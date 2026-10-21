@@ -13,6 +13,7 @@ import banat.nour.nourbanatapplication.Model.MyUserTable.MyUserQuery;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTaskQuery;
 import banat.nour.nourbanatapplication.Model.pkg_table.CarsTable;
+import banat.nour.nourbanatapplication.Model.pkg_table.CarsTableQuery;
 
 /**
  * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
@@ -52,6 +53,7 @@ public abstract class AppDatabase extends RoomDatabase {
      * @param context
      * @return
      */
+    public abstract CarsTableQuery getCarsTableQuery();
     public abstract CarsTable gettaskQuery();
 
     public static AppDatabase getDB(Context context) {
