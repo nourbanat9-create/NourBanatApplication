@@ -22,8 +22,7 @@ public interface CarsTableQuery {
     @Insert
     void insertCar (CarsTable car);
 
-    @Query("SELECT * FROM CarsTable WHERE planteNumber IN (:userIds)")
-    LiveData<List<MyUser> >loadAllByPlanteNum(int[] userIds);
+
 
    @Query("SELECT * FROM CarsTable WHERE brand = :myBrand AND model1 = :model1 LIMIT 1")
     LiveData<List<CarsTable>> checkPrice(String myBrand, String model1);
