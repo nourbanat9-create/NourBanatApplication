@@ -64,9 +64,9 @@ public interface MyTaskQuery {
 
     /**
      * استخراج جميع المهمات التابعة لرقم الموضوع
-     * @param key_id رقم الموضوع
+     * @param Title رقم الموضوع
      * @return
      */
-    @Query("SELECT * FROM MyTask WHERE subjId=:key_id ")
-    LiveData<List<MyTask> >getTasksBySubjId(long key_id);
+    @Query("SELECT * FROM MyTask WHERE title=:Title ")
+    LiveData<List<MyTask> >getTasksByTitle(String Title);
 }

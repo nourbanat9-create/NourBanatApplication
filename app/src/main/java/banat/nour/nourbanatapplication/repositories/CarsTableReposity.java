@@ -7,14 +7,13 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import banat.nour.nourbanatapplication.Model.AppDatabase;
-import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
 import banat.nour.nourbanatapplication.Model.pkg_table.CarsTable;
 import banat.nour.nourbanatapplication.Model.pkg_table.CarsTableQuery;
 
-public class CarsTableReposities {
+public class CarsTableReposity {
     private CarsTableQuery carstable ;
     private LiveData<List<CarsTable>> allcars ;
-    public CarsTableReposities(Application application){
+    public CarsTableReposity(Application application){
         AppDatabase db = AppDatabase.getDB(application);
         carstable = db.getCarsTableQuery();
         allcars = carstable.getAllCars();
@@ -32,6 +31,9 @@ public class CarsTableReposities {
     }
     public void insert(CarsTable MyCar){
         carstable.insert(MyCar);
+    }
+    public LiveData<List<CarsTable>> getAllcars ( ){
+        return getAllcars() ;
     }
     public void insertAll(CarsTable... cars){
         carstable.insertAll(cars);

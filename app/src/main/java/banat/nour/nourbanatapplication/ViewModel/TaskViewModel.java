@@ -23,10 +23,9 @@ public class TaskViewModel extends AndroidViewModel {
     public LiveData<List<MyTask>>getAllTasks() {
         return allTasks ;
     }
-    public LiveData<List<MyTask>> getTasksByUserId (long userId){
-        return repository.getTasksByUserId(userId);
+
+    public LiveData<List<MyTask>> getTaskByTitle(String Title){
+        return repository.getTasksByTitle(Title);
     }
-    public LiveData<MyTask> getTaskbyId (long userId){
-        return repository.getAllTaskOrederBy(userId);
-    }
+
 }
