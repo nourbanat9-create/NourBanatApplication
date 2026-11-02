@@ -17,7 +17,7 @@ import banat.nour.nourbanatapplication.Model.MySubjectTable.MySubjectQuery;
 import banat.nour.nourbanatapplication.R;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bntAddNewTask ;
+    private Button btnSignIn ;
     private Button bntRegister;
 
     @Override
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        bntAddNewTask = findViewById(R.id.btnAddNewTask);
-        bntAddNewTask.setOnClickListener(new View.OnClickListener() {
+        btnSignIn = findViewById(R.id.btnSignIn);
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
 
         bntRegister = findViewById(R.id.bntRegister);
         bntRegister.setOnClickListener(new View.OnClickListener() {

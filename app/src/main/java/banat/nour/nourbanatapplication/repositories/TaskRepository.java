@@ -1,7 +1,6 @@
 package banat.nour.nourbanatapplication.repositories;
 
 import android.app.Application;
-import android.icu.text.CaseMap;
 
 import androidx.lifecycle.LiveData;
 
@@ -46,14 +45,14 @@ public class TaskRepository {
         return allTasks ;
     }
 
-
+     
     /**
      * جلب المهام المرتبطة بمعرف مستخدم معين (User ID).
      *
      * @param UserId معرف المستخدم المراد جلب مهامه.
      * @return قائمة المهام الخاصة بالمستخدم المحدد.
      */
-    public LiveData<List<MyTask>> getAllTaskOrderBy (long UserId){
+    public LiveData<List<MyTask>> getTasksByUserId (long UserId){
         return taskQuery.getAllTaskOrederBy(UserId);
     }
     /**
@@ -80,7 +79,7 @@ public class TaskRepository {
      * @param tasks المهام المراد حذفها.
      */
     public void delete (MyTask...tasks){
-        taskQuery.deleteTask(tasks);
+        taskQuery.delete(tasks);
     }
     /**
      * حذف مهمة محددة باستخدام معرفها الفريد (Task ID).
@@ -89,10 +88,10 @@ public class TaskRepository {
      */
 
     public void deleteTaskById  (long taskId){
-        taskQuery.deleteTask(taskId);
+        taskQuery.deleteTaskById(taskId);
     }
-    public LiveData<List<MyTask>> getTasksByTitle (String Title){
-        return taskQuery.getTasksByTitle(Title);
+    public LiveData<List<MyTask>> getTasksBySubjId (String title){
+        return taskQuery.getTasksBySubj(title);
     }
     public LiveData<List<MyTask>>getAllTaskOrederBy (long userid_p, boolean isCompleted_p){
         return taskQuery.getAllTaskOrederBy(userid_p , isCompleted_p);

@@ -10,11 +10,11 @@
     tools:context=".ViewPkg.MainActivity">
 
     <Button
-        android:id="@+id/btnAddNewTask"
+        android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="98dp"
         android:orientation="vertical"
-        android:text="Add New Task"
+        android:text="Sign in "
         tools:layout_editor_absoluteX="51dp"
 
         tools:layout_editor_absoluteY="214dp" />
