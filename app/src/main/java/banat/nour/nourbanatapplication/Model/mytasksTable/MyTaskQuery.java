@@ -57,16 +57,16 @@ public interface MyTaskQuery {
      * @param tasks حذف المهمات (حسب المفتاح الرئيسي)
      */
     @Delete
-    void deleteTask(MyTask...tasks);
+    void delete(MyTask...tasks);
 
     @Query("DELETE FROM MyTask WHERE taskId=:kid")
-    void deleteTask(long kid);
+    void deleteTaskById(long kid);
 
     /**
      * استخراج جميع المهمات التابعة لرقم الموضوع
-     * @param Title رقم الموضوع
+     * @param title رقم الموضوع
      * @return
      */
-    @Query("SELECT * FROM MyTask WHERE title=:Title ")
-    LiveData<List<MyTask> >getTasksByTitle(String Title);
+    @Query("SELECT * FROM MyTask WHERE title =:title  ")
+    LiveData<List<MyTask> >getTasksBySubj(String title );
 }
