@@ -21,4 +21,36 @@ public class UserViewModel extends AndroidViewModel {
         repository = new UserRepository(application);
         allUsers = repository.getAllUsers();
     }
+    public void insert(MyUser user) {
+        repository.insert(user);
+    }
+    /**
+     * إدراج مستخدم جديد في قاعدة البيانات (التسجيل / Sign Up).
+     *
+     * @param user كائن المستخدم المراد إضافته.
+     */
+    /**
+     * البحث عن مستخدم بواسطة البريد الإلكتروني للتحقق من وجوده مسبقاً.
+     *
+     * @param email البريد الإلكتروني المراد البحث عنه.
+     * @return كائن {@link MyUser} إن وجد، أو null إذا لم يوجد.
+     */
+    public MyUser getUserByEmail(String email) {
+        return repository.getUserByEmail(email);
+    }
+    /**
+     * التحقق من بيانات تسجيل الدخول (تسجيل الدخول / Sign In).
+     *
+     * @param email    البريد الإلكتروني للمستخدم.
+     * @param password كلمة المرور.
+     * @return كائن {@link MyUser} المطابق للبيانات، أو null في حال خطأ البريد أو كلمة المرور.
+     */
+    public MyUser login(String email, String password) {
+        return repository.login(email, password);
+    }
+
+
+
+
+
 }

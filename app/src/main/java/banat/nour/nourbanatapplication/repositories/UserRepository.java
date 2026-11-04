@@ -49,6 +49,19 @@ public class UserRepository {
     public void update (MyUser ... values){
         UserQuery.update(values);
     }
+    public MyUser getUserByEmail(String email) {
+        return UserQuery.getUserByEmail(email);
+    }
+    /**
+     * التحقق من بيانات تسجيل الدخول (تسجيل الدخول / Sign In).
+     *
+     * @param email    البريد الإلكتروني للمستخدم.
+     * @param password كلمة المرور.
+     * @return كائن {@link MyUser} المطابق للبيانات، أو null في حال خطأ البريد أو كلمة المرور.
+     */
+    public MyUser login(String email, String password) {
+        return UserQuery.login(email, password);
+    }
 
 
 

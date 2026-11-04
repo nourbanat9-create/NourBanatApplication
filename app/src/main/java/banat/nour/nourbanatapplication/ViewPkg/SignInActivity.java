@@ -3,6 +3,7 @@ package banat.nour.nourbanatapplication.ViewPkg;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import banat.nour.nourbanatapplication.R;
+import banat.nour.nourbanatapplication.ViewModel.UserViewModel;
+import banat.nour.nourbanatapplication.repositories.UserRepository;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ public class SignInActivity extends AppCompatActivity {
     private MaterialButton btnApple;
     private TextView tvDontHaveAccount;
     private TextView tvSignUp;
+    private UserViewModel userViewModel ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +61,25 @@ public class SignInActivity extends AppCompatActivity {
         tvDontHaveAccount = findViewById(R.id.tvDontHaveAccount);
         tvSignUp = findViewById(R.id.tvSignUp);
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnSignIn.setOnClickListener(-> signInUser());
             @Override
             public void onClick(View v) {
-                // etEmail
-            }
-            }
-        }
+                // etEmail btnSignIn etPassword
+                String email = etEmail.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
+                if (email.isEmpty()) {
+                    etEmail.setError("please enter your email");
+                    return;
 
+                }
+                if (password.isEmpty()) {
+                    etPassword.setError("please enter your password");
+                    return;
+                }
+                if (email.equals("user@email.com") && password.equals("123456")) {
+                    Toast.makeText(SignInActivity.this, "تم تسجيل الدخول بنجاح!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
+    }
