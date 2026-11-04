@@ -1,5 +1,6 @@
 package banat.nour.nourbanatapplication.ViewPkg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,11 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
 import banat.nour.nourbanatapplication.R;
 import banat.nour.nourbanatapplication.ViewModel.UserViewModel;
 import banat.nour.nourbanatapplication.repositories.UserRepository;
@@ -61,25 +64,35 @@ public class SignInActivity extends AppCompatActivity {
         tvDontHaveAccount = findViewById(R.id.tvDontHaveAccount);
         tvSignUp = findViewById(R.id.tvSignUp);
 
-        btnSignIn.setOnClickListener(-> signInUser());
-            @Override
-            public void onClick(View v) {
-                // etEmail btnSignIn etPassword
-                String email = etEmail.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-                if (email.isEmpty()) {
-                    etEmail.setError("please enter your email");
-                    return;
+        btnSignIn.setOnClickListener(v -> signInUser());
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+    }
+        private void signInUser () {
+            // etEmail btnSignIn etPassword
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
+            if (email.isEmpty()) {
+                etEmail.setError("Email is required");
+                etEmail.requestFocus();
+                return;
 
-                }
-                if (password.isEmpty()) {
-                    etPassword.setError("please enter your password");
-                    return;
-                }
-                if (email.equals("user@email.com") && password.equals("123456")) {
-                    Toast.makeText(SignInActivity.this, "تم تسجيل الدخول بنجاح!", Toast.LENGTH_SHORT).show();
-                }
             }
+            if (password.isEmpty()) {
+                etPassword.setError("password is required");
+                etPassword.requestFocus();
+                return;
+            }
+            MyUser user = userViewModel.login(email,password);
+            if (user != null ){
+                Toast.makeText(this,"welcome" + user.getFullName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignInActivity.this , MainScreenActivity.class) ;
+                startActivity(intent);
+                finish();
+            }else {
+                Toast.makeText(this , "Invalid email or password" , Toast.LENGTH_SHORT).show();
+            }
+        }
+
 
 
     }
