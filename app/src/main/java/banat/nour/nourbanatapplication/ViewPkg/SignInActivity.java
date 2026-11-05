@@ -65,6 +65,10 @@ public class SignInActivity extends AppCompatActivity {
         tvSignUp = findViewById(R.id.tvSignUp);
 
         btnSignIn.setOnClickListener(v -> signInUser());
+        tvSignUp.setOnClickListener(v -> {
+            Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
     }
         private void signInUser () {
