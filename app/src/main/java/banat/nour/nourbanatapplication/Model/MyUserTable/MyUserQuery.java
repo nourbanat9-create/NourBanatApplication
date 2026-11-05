@@ -49,4 +49,9 @@ public interface MyUserQuery
     @Update
         // تعديل مستعمل او قائمة مستعملين
     void update(MyUser...values);
+    @Query("SELECT * FROM MyUser WHERE email = :email LIMIT 1")
+    MyUser getUserByEmail(String email);
+
+    @Query("SELECT * FROM MyUser WHERE email = :email AND passw = :password LIMIT 1")
+    MyUser login(String email, String password);
 }

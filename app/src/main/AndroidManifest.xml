@@ -45,6 +45,10 @@
             android:name=".ViewPkg.SignUpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ViewPkg.MainScreenActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
