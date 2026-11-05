@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_apple"
     android:fillViewport="true"
-    android:background="@drawable/bg_screen"
     tools:context=".ViewPkg.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +32,7 @@
                 android:layout_height="36dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_app_logo" />
+            />
         </FrameLayout>
 
         <!-- Main Form Elevated Card -->
@@ -44,11 +44,11 @@
             app:cardBackgroundColor="@color/card_background"
             app:cardCornerRadius="24dp"
             app:cardElevation="8dp"
-            app:strokeColor="@color/card_stroke"
-            app:strokeWidth="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/flLogoContainer">
+            app:layout_constraintTop_toBottomOf="@id/flLogoContainer"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -229,7 +229,7 @@
                     android:layout_width="0dp"
                     android:layout_height="56dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_button_gradient"
+                    android:backgroundTint="@color/primary"
                     android:elevation="4dp"
                     android:text="@string/sign_up"
                     android:textAllCaps="false"
@@ -289,7 +289,6 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnGoogle"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_marginEnd="16dp"
@@ -309,7 +308,6 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnApple"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:insetLeft="0dp"
@@ -322,7 +320,7 @@
                         app:iconGravity="textStart"
                         app:iconPadding="0dp"
                         app:iconSize="26dp"
-                        app:iconTint="@color/text_primary"
+                        app:iconTint="@color/background"
                         app:strokeColor="@color/social_button_stroke"
                         app:strokeWidth="1.5dp" />
                 </LinearLayout>
