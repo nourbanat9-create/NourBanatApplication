@@ -12,29 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NourBanatApplication">
         <activity
-            android:name=".ViewPkg.MainActivity"
+            android:name=".ViewPkg.SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ViewPkg.AddTaskActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ViewPkg.RegisterActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ViewPkg.AddTaskActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ViewPkg.signIn"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -45,14 +32,9 @@
             android:name=".ViewPkg.SignUpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ViewPkg.MainScreenActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ViewPkg.SplashScreenActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ViewPkg.MainActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+
+
     </application>
 
 </manifest>

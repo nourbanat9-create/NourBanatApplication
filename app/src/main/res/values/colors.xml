@@ -3,25 +3,27 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Primary Brand Colors -->
-    <color name="primary">#4F46E5</color>
-    <color name="primary_color">#4F46E5</color>
-    <color name="primary_dark">#4338CA</color>
-    <color name="primary_light">#EEF2FF</color>
-    <color name="accent_purple">#6366F1</color>
+    <!-- Classic Luxury Theme (Burgundy & Cream) -->
+    <color name="primary">#701C2E</color>
+    <color name="primary_color">#701C2E</color>
+    <color name="primary_dark">#4A121E</color>
+    <color name="primary_light">#F5EBEB</color>
+    <color name="accent_gold">#C5A059</color>
 
-    <!-- Background & Card Colors -->
-    <color name="background">#F8FAFC</color>
+    <!-- Background & Card Surface Colors -->
+    <color name="background">#FDFBF7</color>
     <color name="card_background">#FFFFFF</color>
-    <color name="card_stroke">#E2E8F0</color>
+    <color name="card_stroke">#E6DDD4</color>
+    <color name="input_background">#FAF7F2</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#0F172A</color>
-    <color name="text_secondary">#64748B</color>
-    <color name="text_hint">#94A3B8</color>
+    <color name="text_primary">#2D2325</color>
+    <color name="text_secondary">#7D7571</color>
+    <color name="text_hint">#A09893</color>
 
-    <!-- UI Accent Colors -->
-    <color name="divider_color">#E2E8F0</color>
-    <color name="social_button_stroke">#E2E8F0</color>
-    <color name="social_button_bg">#F8FAFC</color>
+    <!-- Border & Divider Colors -->
+    <color name="border_color">#D9CBBF</color>
+    <color name="divider_color">#E6DDD4</color>
+    <color name="social_button_stroke">#D9CBBF</color>
+    <color name="social_button_bg">#FAF7F2</color>
 </resources>
