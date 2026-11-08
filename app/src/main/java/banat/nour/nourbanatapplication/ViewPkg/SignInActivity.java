@@ -75,9 +75,11 @@ public class SignInActivity extends AppCompatActivity {
             // etEmail btnSignIn etPassword
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
+            // يحذف أي مسافات زائدة في البداية أو النهاية (trim())
             if (email.isEmpty()) {
                 etEmail.setError("Email is required");
                 etEmail.requestFocus();
+                // الشرح: ينقل تركيز المؤشر (Focus) إلى حقل البريد مباشرةً ليكتب فيه المستخدم.
                 return;
 
             }

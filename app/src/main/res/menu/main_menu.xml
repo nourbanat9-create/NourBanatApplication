@@ -4,14 +4,13 @@
 
     <item
         android:id="@+id/itmSettings"
-        android:title="Settings"
-        app:showAsAction="always|withText" />
+        android:title="Settings" />
     <item
         android:id="@+id/itmSignout"
-        android:title="Sign out"
-        app:showAsAction="always|withText" />
+        android:title="SignOut" />
     <item
         android:id="@+id/itmHistory"
+        android:icon="@android:drawable/ic_menu_recent_history"
         android:title="History"
         app:showAsAction="always|withText" />
 </menu>
