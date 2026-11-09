@@ -75,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId()==R.id.itmSettings){
-            Toast.makeText(this,"Settings" , Toast.LENGTH_SHORT ).show();
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+            return true;
         }
         if(item.getItemId()==R.id.itmSignout){
             Toast.makeText(this ,"Sign out" , Toast.LENGTH_SHORT).show();
