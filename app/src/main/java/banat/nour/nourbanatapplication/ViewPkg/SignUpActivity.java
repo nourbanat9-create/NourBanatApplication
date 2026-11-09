@@ -111,6 +111,24 @@ public class SignUpActivity extends AppCompatActivity {
             etConfirmPassword.requestFocus();
             return;
         }
+        if (password.length() < 6) {
+            etPassword.setError("Password must be at least 6 characters");
+            etPassword.requestFocus();
+            return;
+        }
+
+// 2. فحص وتعقيد كلمة السر (أرقام وحروف وصيغ معقدة باستعمال الـ Regex)
+        if (!password.matches(".*[A-Z].*")) {
+            etPassword.setError("Password must contain at least one uppercase letter");
+            etPassword.requestFocus();
+            return;
+        }
+
+        if (!password.matches(".*[0-9].*")) {
+            etPassword.setError("Password must contain at least one number");
+            etPassword.requestFocus();
+            return;
+        }
 
         if (!cbTerms.isChecked()) {
             Toast.makeText(this, "Please agree to the Terms & Conditions", Toast.LENGTH_SHORT).show();
@@ -125,7 +143,7 @@ public class SignUpActivity extends AppCompatActivity {
         userViewModel.insert(newUser);
         Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

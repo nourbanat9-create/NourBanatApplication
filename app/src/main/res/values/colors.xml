@@ -26,4 +26,8 @@
     <color name="divider_color">#E6DDD4</color>
     <color name="social_button_stroke">#D9CBBF</color>
     <color name="social_button_bg">#FAF7F2</color>
+
+    <!-- Accent & Alert Colors -->
+    <color name="delete_accent">#B91C1C</color>
+    <color name="delete_accent_bg">#FFF5F5</color>
 </resources>
