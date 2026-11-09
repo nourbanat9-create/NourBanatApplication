@@ -44,6 +44,9 @@
     </LinearLayout>
 
     <!-- Scrollable Content -->
+
+    <!-- Footer Action Bar -->
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollViewSettings"
         android:layout_width="0dp"
@@ -53,8 +56,10 @@
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/llFooterBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llHeader">
+        app:layout_constraintTop_toBottomOf="@id/llHeader"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -367,7 +372,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Footer Action Bar -->
     <LinearLayout
         android:id="@+id/llFooterBar"
         android:layout_width="0dp"

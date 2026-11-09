@@ -40,7 +40,7 @@ public class Settings extends AppCompatActivity {
     private MaterialButton btnSaveChanges;
 
     // Entity Model Attribute
-    private UserSettings userSettingsModel;
+    private UserSettings userSettingsModel; //الشرح: متغير يمثل الكائن الذي يحمل بيانات إعدادات المستخدم (UserSettings).
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +53,34 @@ public class Settings extends AppCompatActivity {
             return insets;
         });
 
-        // Initialize UI Attributes via findViewById
+
         initViews();
-
-        // Initialize Model Entity with Default / Saved Values
         initModel();
-
-        // Populate UI with Model Data
         populateUIFromModel();
-
-        // Set up Listeners and Event Handlers
         setupListeners();
+        /**
+         * 1. initViews()
+         * الوظيفة: ربط عناصر الواجهة المصممة في ملف الـ XML (مثل الأزرار والنصوص) بمتغيرات الجافا باستخدام findViewById.
+         *
+         * الهدف: تجهيز العناصر البرمجية حتى تتمكن من التحكم بها والتعديل عليها في الأسطر التالية.
+         *
+         * 2. initModel()
+         * الوظيفة: إنشاء وتجهيز كائن البيانات (في حالتك userSettingsModel) وإعطائه قيم بداية (سواء قيم افتراضية أو قيم مجلوبة من قاعدة البيانات).
+         *
+         * الهدف: تجهيز المعلومات المُراد عرضها أو التعديل عليها قبل التعامل مع الواجهة.
+         *
+         * 3. populateUIFromModel()
+         * الوظيفة: أخذ البيانات من كائن الـ Model وإسنادها إلى عناصر الواجهة (مثلاً: وضع اسم المستخدم في etFullName وتفعيل المفاتيح بناءً على الإعدادات).
+         *
+         * الهدف: ملء الشاشة بالبيانات الحقيقية الخاصة بالمستخدم أول ما تفتح الشاشة.
+         *
+         * 4. setupListeners()
+         * الوظيفة: تحديد ماذا يحدث عند تفاعل المستخدم مع العناصر (مثل الضغط على زر الحفظ، زر الرجوع، أو المفاتيح).
+         *
+         * الهدف: تفعيل الاستجابة للأزرار والأحداث (Click Events).
+         *
+         * الفائدة الأساسية من هذا التقسيم:
+         * لو لم نستخدم هذه الدوال ورتبنا الكود داخل onCreate مباشرة، لكان الكود طويلاً جداً ومعقداً ومصعباً على أي مبرمج آخر قراءته أو تعديله مستقبلاً.**/
     }
 
     private void initViews() {
@@ -87,6 +104,18 @@ public class Settings extends AppCompatActivity {
         String[] languages = new String[]{"English", "Arabic", "French", "Spanish"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, languages);
         actvLanguage.setAdapter(adapter);
+        /** إنشائ مصفوفة نصية تحتوي على اللغات المتاحة (languages).
+
+         إنشاء ArrayAdapter لربط هذه اللغات مع القائمة المنسدلة actvLanguage.
+         this (الـ Context): يخبر أندرويد أن الشاشة الحالية (Settings Activity) هي التي ستستضيف وتُدير هذه القائمة.
+
+         android.R.layout.simple_dropdown_item_1line: هو تصميم جاهز ومبني داخل نظام أندرويد، وظيفته تحديد شكل كل سطر داخل القائمة (سطر نصي بسيط بخلفية شفافة وحجم خط مناسب).
+
+         languages: هي مصفوفة الكلمات أو البيانات ("English", "Arabic"...) المراد إظهارها داخل هذا التصميم.
+
+         تعيين المحول للقائمة المنسدلة بواسطة setAdapter.
+         تها: إعطاء الأوامر للقائمة المنسدلة actvLanguage لتأخذ كل الكلمات التي تم تجهيزها داخل الـ adapter وتطبعها في الواجهة عندما يضغط المستخدم عليها.
+         **/
     }
 
     private void initModel() {
@@ -119,7 +148,7 @@ public class Settings extends AppCompatActivity {
     private void setupListeners() {
         ibBack.setOnClickListener(v -> finish());
         btnCancel.setOnClickListener(v -> finish());
-
+// الشرح: عند الضغط على زر الرجوع ibBack أو زر الإلغاء btnCancel يتم استدعاء finish() لإغلاق الشاشة الحالية والعودة للشاشة السابقة.
         btnSaveChanges.setOnClickListener(v -> saveSettings());
 
         ibUploadAvatar.setOnClickListener(v ->
