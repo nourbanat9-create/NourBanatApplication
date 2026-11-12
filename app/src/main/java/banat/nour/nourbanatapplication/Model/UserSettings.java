@@ -9,10 +9,13 @@ public class UserSettings {
     private boolean pushNotificationsEnabled;
     private String selectedLanguage;
     private boolean darkModeEnabled;
-    private boolean twoFactorEnabled;
-    private int activeSessionsCount;
+    private boolean twoFactorEnabled; //يحدد هل المصادقة الثنائية (حماية إضافية للحساب) مفعّلة أم لا.
+    private int activeSessionsCount; //رقم صحيح (int) يحسب عدد الأجهزة المفتوح عليها الحساب حالياً.
 
     public UserSettings() {
+        /** (الباني الفارغ): ضروري جداً لمكتبة Firebase؛ لأن Firebase
+         *         يحتاج لباني فارغ حتى يتمكن من تحويل البيانات القادمة من قاعدة البيانات إلى كائن (Object) داخل كود الجافا.
+          */
     }
 
     public UserSettings(String userId, String userName, String email, String avatarUrl,
@@ -29,6 +32,7 @@ public class UserSettings {
         this.darkModeEnabled = darkModeEnabled;
         this.twoFactorEnabled = twoFactorEnabled;
         this.activeSessionsCount = activeSessionsCount;
+        // (الباني المليء): يُستخدم عندما تقومين بإنشاء إعدادات جديدة للمستخدم لأول مرة وتمرير كل بياناته دفعة واحدة.
     }
 
     public String getUserId() {

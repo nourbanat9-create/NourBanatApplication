@@ -34,4 +34,9 @@
     <string name="back">Back</string>
     <string name="avatar">Avatar</string>
     <string name="upload_avatar">Upload Avatar</string>
+    <string name="book_cover">Book Cover</string>
+    <string name="clear_history">Clear History</string>
+    <string name="no_history_title">No History Available</string>
+    <string name="no_history_desc">Your past book exchange and borrowing transactions will appear here.</string>
+    <string name="history_title">History</string>
 </resources>
