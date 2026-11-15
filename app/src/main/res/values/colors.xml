@@ -3,21 +3,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Classic Luxury Theme (Burgundy & Cream) -->
-    <color name="primary">#701C2E</color>
-    <color name="primary_color">#701C2E</color>
-    <color name="primary_dark">#4A121E</color>
+    <!-- BookLoop Burgundy & Cream Theme Palette -->
+    <color name="primary">#800020</color>
+    <color name="primary_color">#800020</color>
+    <color name="primary_dark">#6A041D</color>
     <color name="primary_light">#F5EBEB</color>
-    <color name="accent_gold">#C5A059</color>
+    <color name="accent_gold">#D4AF37</color>
+    <color name="accent_gold_dark">#C59B27</color>
 
     <!-- Background & Card Surface Colors -->
-    <color name="background">#FDFBF7</color>
+    <color name="background">#FAF8F6</color>
     <color name="card_background">#FFFFFF</color>
     <color name="card_stroke">#E6DDD4</color>
-    <color name="input_background">#FAF7F2</color>
+    <color name="input_background">#FFFFFF</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#2D2325</color>
+    <color name="text_primary">#2B2B2B</color>
     <color name="text_secondary">#7D7571</color>
     <color name="text_hint">#A09893</color>
 
@@ -26,6 +27,10 @@
     <color name="divider_color">#E6DDD4</color>
     <color name="social_button_stroke">#D9CBBF</color>
     <color name="social_button_bg">#FAF7F2</color>
+
+    <!-- Tag & Badge Colors -->
+    <color name="tag_swap_bg">#F5EBEB</color>
+    <color name="tag_borrow_bg">#FFF8E7</color>
 
     <!-- Accent & Alert Colors -->
     <color name="delete_accent">#B91C1C</color>
