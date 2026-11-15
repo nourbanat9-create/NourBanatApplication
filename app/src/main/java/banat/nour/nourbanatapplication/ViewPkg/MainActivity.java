@@ -80,10 +80,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
             return true;
+
         }
 
         if (item.getItemId()==R.id.itmHistory){
-            Toast.makeText(this,"History" , Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, History.class);
+            startActivity(intent);
+            return true;
         }
         else if(item.getItemId() == R.id.itmSignout) {
             showYesNoDalog();

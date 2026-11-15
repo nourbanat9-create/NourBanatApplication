@@ -27,9 +27,7 @@ import java.util.List;
 import banat.nour.nourbanatapplication.Model.HistoryItem;
 import banat.nour.nourbanatapplication.R;
 
-/**
- * شاشة سجل المعاملات (History Activity) لربط واستعراض معاملات التبادل والاستعارة السابقة من Firebase Firestore.
- */
+
 public class History extends AppCompatActivity {
 
     // عناصر الواجهة
@@ -43,8 +41,7 @@ public class History extends AppCompatActivity {
     private List<HistoryItem> historyList;
 
     // خدمات Firebase
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+
     private String currentUserId;
 
     @Override
@@ -64,7 +61,7 @@ public class History extends AppCompatActivity {
         initViews();
 
         // 2. إعداد Firebase
-        initFirebase();
+
 
 
     }
@@ -79,20 +76,7 @@ public class History extends AppCompatActivity {
         llEmptyState = findViewById(R.id.llEmptyState);
     }
 
-    /**
-     * تهيئة كائنات FirebaseAuth و FirebaseFirestore
-     */
-    private void initFirebase() {
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            currentUserId = currentUser.getUid();
-        } else {
-            currentUserId = ""; // في حال عدم وجود مستخدم مسجل دخول
-        }
-    }
 
 
 
@@ -111,6 +95,8 @@ public class History extends AppCompatActivity {
             rvHistory.setVisibility(View.VISIBLE);
         }
     }
+
+
 
 
 
