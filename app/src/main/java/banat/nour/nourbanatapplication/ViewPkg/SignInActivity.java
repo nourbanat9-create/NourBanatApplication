@@ -90,7 +90,7 @@ public class SignInActivity extends AppCompatActivity {
             }
             MyUser user = userViewModel.login(email,password);
             if (user != null ){
-                Toast.makeText(this,"welcome" + user.getFullName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"welcome " + user.getFullName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignInActivity.this , MainActivity.class) ;
                 startActivity(intent);
                 finish();
