@@ -39,4 +39,15 @@
     <string name="no_history_title">No History Available</string>
     <string name="no_history_desc">Your past book exchange and borrowing transactions will appear here.</string>
     <string name="history_title">History</string>
+    <string name="add_new_book">Add New Book</string>
+    <string name="book_title">Book Title</string>
+    <string name="author_name">Author Name</string>
+    <string name="category">Category</string>
+    <string name="offer_type">Offer Type</string>
+    <string name="for_swap">For Swap</string>
+    <string name="for_borrow">For Borrow</string>
+    <string name="save_book">Save Book</string>
+    <string name="hint_book_title">e.g. The Great Gatsby</string>
+    <string name="hint_author_name">e.g. F. Scott Fitzgerald</string>
+    <string name="hint_category">e.g. Novel, Academic, History</string>
 </resources>
