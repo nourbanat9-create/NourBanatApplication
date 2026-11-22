@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850456215445",
+    "project_id": "nourbanatapplication",
+    "storage_bucket": "nourbanatapplication.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850456215445:android:6851e480d3622ccab5809c",
+        "android_client_info": {
+          "package_name": "banat.nour.nourbanatapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmXSkCN_ofxWnI1ydOzn6Lvcpa3Z0eSXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
