@@ -1,8 +1,17 @@
 package banat.nour.nourbanatapplication.repositories;
 
-import android.app.Application;
+import static androidx.core.content.ContextCompat.startActivity;
 
+import android.app.Application;
+import android.content.Intent;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -10,6 +19,8 @@ import banat.nour.nourbanatapplication.Model.AppDatabase;
 import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
 import banat.nour.nourbanatapplication.Model.MyUserTable.MyUserQuery;
 import banat.nour.nourbanatapplication.Model.mytasksTable.MyTask;
+import banat.nour.nourbanatapplication.ViewPkg.MainActivity;
+import banat.nour.nourbanatapplication.ViewPkg.SignInActivity;
 
 public class UserRepository {
     private MyUserQuery UserQuery ;
@@ -63,6 +74,35 @@ public class UserRepository {
         return UserQuery.login(email, password);
     }
 
+//    FirebaseAuth auth = FirebaseAuth.getInstance();
+//            auth.signInWithEmailAndPassword(email, password)
+//            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//        @Override
+//        public void onComplete(@NonNull Task<AuthResult> task) {
+//            if (task.isSuccessful()) {
+//                // إذا نجح تسجيل الدخول
+//                Toast.makeText(SignInActivity.this, "Signing in Succeeded", Toast.LENGTH_SHORT).show();
+//                Intent i = new Intent(SignInActivity.this, MainActivity.class);
+//                startActivity(i);
+//                finish(); // لإغلاق شاشة الدخول وعدم العودة إليها بالرجوع
+//            } else {
+//                // إذا فشل تسجيل الدخول (مثلاً: كلمة مرور خاطئة أو حساب غير موجود)
+//                Toast.makeText(SignInActivity.this, "Signing in Failed", Toast.LENGTH_SHORT).show();
+//                etEmail.setError(task.getException().getMessage());
+//            }
+//        }
+//    });
+//
+//}
+//@Override
+//protected void onStart() {
+//    super.onStart();
+//    if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//        Intent i = new Intent(SignInActivity.this, MainActivity.class);
+//        startActivity(i);
+//        finish();
+//    }
+//}
 
 
 }

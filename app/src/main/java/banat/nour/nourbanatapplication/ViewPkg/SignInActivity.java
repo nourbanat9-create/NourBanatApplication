@@ -7,15 +7,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import banat.nour.nourbanatapplication.Model.MyUserTable.MyUser;
 import banat.nour.nourbanatapplication.R;
@@ -88,16 +94,9 @@ public class SignInActivity extends AppCompatActivity {
                 etPassword.requestFocus();
                 return;
             }
-            MyUser user = userViewModel.login(email,password);
-            if (user != null ){
-                Toast.makeText(this,"welcome " + user.getFullName(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignInActivity.this , MainActivity.class) ;
-                startActivity(intent);
-                finish();
-            }else {
-                Toast.makeText(this , "Invalid email or password" , Toast.LENGTH_SHORT).show();
-            }
-        }
+
+
+
 
 
 
