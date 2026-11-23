@@ -92,15 +92,15 @@ public class MainActivity extends AppCompatActivity {
     private void setupClickListeners() {
 
         // Category Filter Buttons
-        btnFilterAll.setOnClickListener(v -> 
+        btnFilterAll.setOnClickListener(v ->
             Toast.makeText(MainActivity.this, "Showing All Books", Toast.LENGTH_SHORT).show()
         );
 
-        btnFilterSwap.setOnClickListener(v -> 
+        btnFilterSwap.setOnClickListener(v ->
             Toast.makeText(MainActivity.this, "Filtering Books for Swap", Toast.LENGTH_SHORT).show()
         );
 
-        btnFilterBorrow.setOnClickListener(v -> 
+        btnFilterBorrow.setOnClickListener(v ->
             Toast.makeText(MainActivity.this, "Filtering Books for Borrow", Toast.LENGTH_SHORT).show()
         );
 
@@ -112,19 +112,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Sample Book Detail Buttons
         if (btnBook1Details != null) {
-            btnBook1Details.setOnClickListener(v -> 
+            btnBook1Details.setOnClickListener(v ->
                 Toast.makeText(MainActivity.this, "Details: The Great Gatsby", Toast.LENGTH_SHORT).show()
             );
         }
 
         if (btnBook2Details != null) {
-            btnBook2Details.setOnClickListener(v -> 
+            btnBook2Details.setOnClickListener(v ->
                 Toast.makeText(MainActivity.this, "Details: To Kill a Mockingbird", Toast.LENGTH_SHORT).show()
             );
         }
 
         if (btnBook1Details3 != null) {
-            btnBook1Details3.setOnClickListener(v -> 
+            btnBook1Details3.setOnClickListener(v ->
                 Toast.makeText(MainActivity.this, "Details: 1984", Toast.LENGTH_SHORT).show()
             );
         }
