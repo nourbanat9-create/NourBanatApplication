@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,9 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.button.MaterialButton;
 
 import banat.nour.nourbanatapplication.R;
 
@@ -32,17 +29,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         if (savedInstanceState == null){
-            replaceFragment(new fraMain());
+            replaceFragment(new HomeFragment());
         }
         bottomNav.setOnItemSelectedListener(Item -> {
             int itemId = Item.getItemId();
             if (itemId == R.id.nav_home){
-                replaceFragment(new fraMain());
+                replaceFragment(new HomeFragment());
                 return true ;
             }
             else if (itemId == R.id.nav_dashboard){
-            //    replaceFragment(new D);
+                replaceFragment(new DashboardFragment());
                 return  true;
+            }
+            else if (itemId == R.id.nav_settings){
+                replaceFragment(new SettingsFragment());
             }
             return false;
         });
