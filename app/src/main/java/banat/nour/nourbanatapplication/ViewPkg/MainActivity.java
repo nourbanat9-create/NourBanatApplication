@@ -14,40 +14,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 
 import banat.nour.nourbanatapplication.R;
 
-/**
- * MainActivity - BookLoop Platform
- * Handles the main screen UI, top Toolbar with Options Menu (res/menu/main_menu.xml),
- * and intent navigation to AddBookActivity, ProfileActivity, History, Settings, and SignInActivity.
- */
+
 public class MainActivity extends AppCompatActivity {
-
-    // 1. Declare UI Elements
-    private MaterialToolbar toolbar;
-    private EditText etSearch;
-    private MaterialButton btnFilterAll;
-    private MaterialButton btnFilterSwap;
-    private MaterialButton btnFilterBorrow;
-    private MaterialButton btnAddBook;
-
-    // Sample Book Details Buttons
-    private MaterialButton btnBook1Details;
-    private MaterialButton btnBook2Details;
-    private MaterialButton btnBook1Details3;
-
-    // Top Header Profile Navigation Button
-    private MaterialButton btnNavProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        if (savedInstanceState == null){
+            replaceFragment(new fraMain());
+        }
+        bottomNav.setOnItemSelectedListener(Item -> {
+            int itemId = Item.getItemId();
+            if (itemId == R.id.nav_home){
+                replaceFragment(new fraMain());
+                return true ;
+            }
+            else if (itemId == R.id.nav_dashboard){
+            //    replaceFragment(new D);
+                return  true;
+            }
+            return false;
+        });
 
         // Adjust layout padding for Edge-to-Edge window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -56,95 +54,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 2. Set up the Toolbar as the ActionBar to display the 3-dots Options Menu
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        // 3. Initialize UI Views using findViewById
-        initViews();
-
-        // 4. Set up Click Listeners for Buttons
-        setupClickListeners();
+    }
+    public void replaceFragment(Fragment fragment) { // داله مساعده ل تبديل المحتوى
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
     }
 
-    /**
-     * Connects Java variables to XML view components by their IDs
-     */
-    private void initViews() {
-        etSearch = findViewById(R.id.etSearch);
-        btnFilterAll = findViewById(R.id.btnFilterAll);
-        btnFilterSwap = findViewById(R.id.btnFilterSwap);
-        btnFilterBorrow = findViewById(R.id.btnFilterBorrow);
-        btnAddBook = findViewById(R.id.btnAddBook);
 
-        // Book details buttons
-        btnBook1Details = findViewById(R.id.btnBook1Details);
-        btnBook2Details = findViewById(R.id.btnBook2Details);
-        btnBook1Details3 = findViewById(R.id.btnBook1Details3);
-
-        // Header Profile navigation button
-        btnNavProfile = findViewById(R.id.btnNavProfile);
-    }
-
-    /**
-     * Sets click listeners for screen interactive components
-     */
-    private void setupClickListeners() {
-
-        // Category Filter Buttons
-        btnFilterAll.setOnClickListener(v ->
-            Toast.makeText(MainActivity.this, "Showing All Books", Toast.LENGTH_SHORT).show()
-        );
-
-        btnFilterSwap.setOnClickListener(v ->
-            Toast.makeText(MainActivity.this, "Filtering Books for Swap", Toast.LENGTH_SHORT).show()
-        );
-
-        btnFilterBorrow.setOnClickListener(v ->
-            Toast.makeText(MainActivity.this, "Filtering Books for Borrow", Toast.LENGTH_SHORT).show()
-        );
-
-        // Add Book Button -> Navigates to AddBookActivity
-        btnAddBook.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
-            startActivity(intent);
-        });
-
-        // Sample Book Detail Buttons
-        if (btnBook1Details != null) {
-            btnBook1Details.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "Details: The Great Gatsby", Toast.LENGTH_SHORT).show()
-            );
-        }
-
-        if (btnBook2Details != null) {
-            btnBook2Details.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "Details: To Kill a Mockingbird", Toast.LENGTH_SHORT).show()
-            );
-        }
-
-        if (btnBook1Details3 != null) {
-            btnBook1Details3.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "Details: 1984", Toast.LENGTH_SHORT).show()
-            );
-        }
-
-        // Profile Navigation
-        if (btnNavProfile != null) {
-            btnNavProfile.setOnClickListener(v -> {
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            });
-        }
-    }
-
-    // ==========================================
-    // OPTIONS MENU METHODS (res/menu/main_menu.xml)
-    // ==========================================
-
-    /**
-     * Inflates the top 3-dots Options Menu from res/menu/main_menu.xml
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);

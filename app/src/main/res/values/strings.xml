@@ -50,4 +50,6 @@
     <string name="hint_book_title">e.g. The Great Gatsby</string>
     <string name="hint_author_name">e.g. F. Scott Fitzgerald</string>
     <string name="hint_category">e.g. Novel, Academic, History</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
